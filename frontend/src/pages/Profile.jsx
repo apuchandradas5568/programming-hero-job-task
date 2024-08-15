@@ -1,10 +1,16 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../AuthContext";
+import { useNavigate } from "react-router-dom";
 // Firebase auth code will go here
+
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate()
 
+  if(!user){
+      return navigate("/login")
+  }
 
   return (
     <div className="container">

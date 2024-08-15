@@ -7,9 +7,6 @@ router.get('/', async (req, res) => {
       const { page = 1, limit = 10, search, category, priceRange, sort } = req.query;
   
 
-      console.log(req.query);
-
-
       let query = {};
       if (search) query.name = { $regex: search, $options: 'i' };
       if (category) query.category = category;

@@ -11,7 +11,7 @@ const ProductDetails = () => {
   }, [id]);
 
   const fetchProduct = async () => {
-    const { data } = await axios.get(`http://localhost:5000/products/${id}`);
+    const { data } = await axios.get(`http://localhost:3000/products/${id}`);
     setProduct(data);
   };
 

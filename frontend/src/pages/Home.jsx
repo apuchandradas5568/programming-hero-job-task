@@ -1,9 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import ProductCard from "../components/ProductCard";
 import ProductList from "../components/ProductList";
+import { AuthContext } from "../AuthContext";
+import { redirect, useNavigate } from "react-router-dom";
+
 
 const Home = () => {
+
+const navigate = useNavigate()
+
+    const {user} = useContext(AuthContext)
+
+    if(!user){
+        return navigate("/login")
+    }
+
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
