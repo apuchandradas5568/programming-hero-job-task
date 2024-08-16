@@ -5,16 +5,16 @@ import ProductList from "../components/ProductList";
 import { AuthContext } from "../AuthContext";
 import { redirect, useNavigate } from "react-router-dom";
 
-
 const Home = () => {
+  const navigate = useNavigate();
 
-const navigate = useNavigate()
+  const { user } = useContext(AuthContext);
 
-    const {user} = useContext(AuthContext)
-
-    if(!user){
-        return navigate("/login")
+  useEffect(() => {
+    if (!user) {
+      return navigate("/login");
     }
+  }, [user]);
 
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);

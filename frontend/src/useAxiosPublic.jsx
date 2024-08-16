@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosPublic = axios.create({
-    baseURL: 'https://destin-server.onrender.com'
+    baseURL: 'https://backend-for-deploy-eryg.onrender.com'
 })
 
 const useAxiosPublic = () => {

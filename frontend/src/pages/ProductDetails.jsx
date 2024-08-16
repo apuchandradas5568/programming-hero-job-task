@@ -11,7 +11,7 @@ const ProductDetails = () => {
   }, [id]);
 
   const fetchProduct = async () => {
-    const { data } = await axios.get(`http://localhost:3000/products/${id}`);
+    const { data } = await axios.get(`https://backend-for-deploy-eryg.onrender.com/products/${id}`);
     setProduct(data);
   };
 

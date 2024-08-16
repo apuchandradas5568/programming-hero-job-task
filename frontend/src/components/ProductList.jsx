@@ -22,7 +22,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/products?page=${page}&limit=10`, { params: filters });
+        const response = await axios.get(`https://backend-for-deploy-eryg.onrender.com/api/products?page=${page}&limit=10`, { params: filters });
         setProducts(response.data.products);
         setTotalPages(response.data.totalPages);
         setLoading(false);
